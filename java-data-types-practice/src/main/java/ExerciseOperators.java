@@ -109,7 +109,7 @@ public class ExerciseOperators {
         int numSeven = 130;
         byte byteConv = (byte) numSeven;
         System.out.println(byteConv);
-        
+
 
         // 17. Create a variable char letter = 'z'. Subtract 2 from it and print the resulting character
         char letter = 'z';
