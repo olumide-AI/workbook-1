@@ -16,4 +16,4 @@
  - We don't have to initalize a variable e.g
  - int num1;
  - long num2; 
- - ** in python i believ you have to make it equal to something **  
+ - **in python i believe you have to make it equal to something**  
