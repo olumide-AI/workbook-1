@@ -15,5 +15,11 @@ public class MathApp {
         double distance = Math.sqrt(Math.pow(coordX2 - coordX1, 2) +Math.pow(coordY2 - ccordY1, 2));
         System.out.println("Distance between the points: " + distance);
 
+        int id = 10135;
+        String name = "Brandon Plyers";
+        float pay = 5239.77f;
+        System.out.printf("%s (id: %d) $%.2f", name, id, pay);
+
+
     }
 }
