@@ -76,3 +76,10 @@
   - s string
   - c character
 
+- If a method doesn't return anything it uses the keyword void as the return type
+- You can pass data(arguments) into methods in java
+  - They must have the same type 
+  - order matters
+- You're required to specify the type of data that will be returned in a method 
+
+
