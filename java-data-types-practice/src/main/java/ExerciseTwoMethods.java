@@ -36,7 +36,7 @@ public class ExerciseTwoMethods {
         int damageCaused = calculateDamage(strength,enemyDefense);
         System.out.println("Damage dealt is: " + damageCaused);
 
-        //6
+        //6 - check this one something seems off
         boolean bothTrue = canOpenChest(true, true);
         System.out.println("Has key or lock is broken is: " + bothTrue);
 
@@ -44,7 +44,7 @@ public class ExerciseTwoMethods {
         System.out.println("Has no key or no lock is broken is: " + bothFalse);
 
         boolean hasKeyTrue = canOpenChest(true, false);
-        System.out.println("Has key or no lock is broken is: " + bothFalse);
+        System.out.println("Has key or no lock is broken is: " + hasKeyTrue);
 
         boolean brokenLockTrue = canOpenChest(false, true);
         System.out.println("Has no key or  lock is broken is: " + brokenLockTrue);
