@@ -9,13 +9,20 @@ public class IntermediateStringExercise {
         countVowels(sentence);
     }
     public static void countVowels(String certainString){
-        String[] vowels = {"a","e","i","o","u"};
+        //Used chatgpt for final solution
+        certainString = certainString.toLowerCase();
+        String vowels = "aeiou";
         int noOfVowels = 0;
-        for (String vowel : vowels){
-            if(certainString.contains(vowel)){
-                noOfVowels +=1;
-            }
 
+        //loops start from index 0 to length, i++ goes one number at a time
+        for (int i = 0; i < certainString.length(); i++){
+            //grabs the current char at that position/index
+            char letter = certainString.charAt(i);
+            //This if statement checks if current letter on that index is a vowel or not
+            if (vowels.indexOf(letter) != -1){
+                //increment the vowels by one 
+                noOfVowels ++;
+            }
         }
         System.out.println("Number of vowels in string is: " + noOfVowels);
     }
