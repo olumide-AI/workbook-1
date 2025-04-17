@@ -9,7 +9,7 @@ public class TempreatureConverterMaiikeExercises {
         disTemp(celsiusOrFah, userTemp, convertedTemp);
     }
     /*
-        Ask user if they want to convert celsius to fahrenhi or f to c
+        Ask user if they want to convert celsius to fahrenhit or f to c
         ask for the temp
         convert
         display result
