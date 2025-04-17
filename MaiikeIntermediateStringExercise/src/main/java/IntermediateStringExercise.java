@@ -5,6 +5,7 @@ public class IntermediateStringExercise {
         Scanner scanner = new Scanner(System.in);
         //Ask user for a string
         System.out.println("Type any string of your choice and i will tell you how many vowels are in it: ");
+        System.out.println("Make your sentence your fullname and i will split it down the line: e.g Ada Lovelace ");
         String sentence = scanner.nextLine();
         //count vowels
         countVowels(sentence);
@@ -26,6 +27,9 @@ public class IntermediateStringExercise {
 
         //Is name a palindrome"
         isPalindrome(sentence);
+
+        //Split full name using one whitespace
+        splitFullName(sentence);
 
         // close scanner
         scanner.close();
@@ -87,6 +91,16 @@ public class IntermediateStringExercise {
         }
         else{
             System.out.println("Your sentence is not a palindrome");
+        }
+    }
+    public static void splitFullName(String sentence){
+        String[] splitFullName = sentence.split(" ");
+        if (splitFullName.length == 2){
+            System.out.println("Your first name is: " + splitFullName[0]);
+            System.out.println("Your last name is: " + splitFullName[1]);
+            System.out.println("Pretty cool right");
+            System.out.println("That's the end of his demo " );
+            System.out.println("The String intermediate exercise is now complete" );
         }
     }
 }
