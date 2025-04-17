@@ -24,6 +24,9 @@ public class IntermediateStringExercise {
         String userBirthday = userBirthday(scanner);
         System.out.println("Your birthday day is: " + dayOfBirthday(userBirthday));
 
+        //Is name a palindrome"
+        isPalindrome(sentence);
+
         // close scanner
         scanner.close();
     }
@@ -75,5 +78,15 @@ public class IntermediateStringExercise {
     public static String dayOfBirthday(String birthdayInput){
         //begins from index 8: to the end os string
         return birthdayInput.substring(8);
+    }
+    //Is user name a palindrome
+    public static void isPalindrome(String sentence){
+        String reverseSentence = new StringBuilder(sentence).reverse().toString();
+        if (sentence.equals(reverseSentence) ){
+            System.out.println("Your sentence is a palindrome");
+        }
+        else{
+            System.out.println("Your sentence is not a palindrome");
+        }
     }
 }
