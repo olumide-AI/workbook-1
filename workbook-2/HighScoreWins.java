@@ -32,7 +32,7 @@ public class HighScoreWins {
     }
     public static void getWinnerInfo (String userInput){
         //Split Input
-        String[] splitsByPipe = userInput.split("//|");
+        String[] splitsByPipe = userInput.split("\\|");
         String teamNames = splitsByPipe[0];
         String teamScores = splitsByPipe[1];
 
