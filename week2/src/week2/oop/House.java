@@ -19,5 +19,10 @@ public class House {
         this.color = newColor;
         return newColor;
     }
+    public void extraWindows(int additionalWindows, int noOfInitialWindows){
+        this.noOfWindows = additionalWindows + noOfInitialWindows;
+        System.out.println("The house has been remodeled with " + additionalWindows + "additional windows");
+        System.out.println("We now have " + noOfWindows + "total windows");
+    }
 
 }
