@@ -16,5 +16,5 @@ public class Dog {
     public void wagTail() {
         System.out.println(name + " is wagging its tail!");
     }
-    
+
 }
