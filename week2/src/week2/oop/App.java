@@ -43,6 +43,32 @@ public class App {
         dog2.bark();
         dog1.bark(); // dog1 now also barks as "Rex"
 
-        System.out.println(dog1.name); //dog1 name is now rex here because of referencinf
+        System.out.println(dog1.name); //dog1 name is now rex here because of referencing
+
+        // Create and use a House
+        House hauntedHouse = new House();
+        hauntedHouse.color = "dark gray";
+        hauntedHouse.noOfRooms = 12;
+        hauntedHouse.noOfWindows = 30;
+        hauntedHouse.openDoor();
+        hauntedHouse.paint("black");
+
+        // Create and use a Car
+        Car electricCar = new Car();
+        electricCar.make = "Tesla";
+        electricCar.model = "Model S";
+        electricCar.topSpeed = 200;
+        electricCar.startEngine();
+        electricCar.honk();
+
+        // Object reference fun!
+        Car secondCar = electricCar;
+        secondCar.make = "Lucid";
+        secondCar.honk();  // Outputs: "Lucid honks loudly!"
+        electricCar.honk(); // Also "Lucid honks loudly!" because it's the same object
+
+        // Print object fields
+        System.out.println("House color: " + hauntedHouse.color);
+        System.out.println("Car make: " + electricCar.make);
     }
 }
