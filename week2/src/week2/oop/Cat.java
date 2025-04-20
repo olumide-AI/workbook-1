@@ -13,4 +13,10 @@ public class Cat {
     public void meow(){
         System.out.println(name + " says: Meow! (in a " + color + " coat)");
     }
+    public void sleep() {
+        System.out.println(name + " is sleeping...");
+    }
+    public void walking(){
+        System.out.println(name + " walks on " + noOfLegs);
+    }
 }

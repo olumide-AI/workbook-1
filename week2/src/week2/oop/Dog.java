@@ -13,4 +13,8 @@ public class Dog {
     public void bark() {
         System.out.println(name + " says: Woof! (Breed: " + breed + ")");
     }
+    public void wagTail() {
+        System.out.println(name + " is wagging its tail!");
+    }
+    
 }
