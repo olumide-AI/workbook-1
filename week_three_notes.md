@@ -6,7 +6,7 @@
 - Constructors, constructors overloading 
 
 ## Bonus
-- 
+- constructors chaining 
 
 ## Random notes
 - Setting needs just one parameter 

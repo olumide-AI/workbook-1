@@ -19,5 +19,9 @@ public class App2 {
         bookTwo.describe();
         bookThree.describe();
         bookFour.describe();
+
+        //Create one cupcake #7
+        Cupcake cupcakeOne = new Cupcake("Vanilla", 500);
+        cupcakeOne.isHealthy();
     }
 }
