@@ -32,4 +32,5 @@ public class Book {
             System.out.println("A book must have at least one page!");
         }
     }
+
 }
