@@ -3,8 +3,18 @@
 ## Things to review 
 - getters and setters 
 - Encapsulation 
+- Constructors, constructors overloading 
+
+## Bonus
+- 
 
 ## Random notes
 - Setting needs just one parameter 
 - encapsulation is just a best practice so we don't access object directly 
 and we set them privately and assigned getters and setters 
+- I you don't add a constructor java adds a constructor for you 
+- constructor is an addition to a class 
+- overloading is two methods with the sam name but different parameter list 
+
+## Question 
+- why do getters have return statement and setters not
