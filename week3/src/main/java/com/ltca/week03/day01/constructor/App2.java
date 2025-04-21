@@ -23,5 +23,9 @@ public class App2 {
         //Create one cupcake #7
         Cupcake cupcakeOne = new Cupcake("Vanilla", 500);
         cupcakeOne.isHealthy();
+
+        //Create person class
+        Person personOne = new Person("Lana", -5);
+
     }
 }
