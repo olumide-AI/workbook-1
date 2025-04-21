@@ -19,7 +19,9 @@ public class App {
         peter.setHeight(160);
         peter.setHasCar(true);
         peter.read();
-        
+        System.out.println(peter.getName() + " is " + peter.getHeight() + "cm tall");
+        System.out.println(peter.getName() + " is " + peter.getWeight() + "lbs");
+        System.out.println(peter.getName() + " favorite color is  " + peter.getFavoriteColor() + "cm tall");
 
         //Book Class
         Book myBook = new Book();
