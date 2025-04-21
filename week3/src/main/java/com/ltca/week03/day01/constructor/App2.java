@@ -27,5 +27,9 @@ public class App2 {
         //Create person class
         Person personOne = new Person("Lana", -5);
 
+        //create planet class
+        Planet earth = new Planet("Earth", 12742);
+        System.out.println("Planet: " + earth.getName());
+        // earth.name = "Mars"; ❌ This will give a compile error
     }
 }
