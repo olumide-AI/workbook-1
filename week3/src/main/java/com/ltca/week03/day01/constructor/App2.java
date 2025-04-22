@@ -31,5 +31,11 @@ public class App2 {
         Planet earth = new Planet("Earth", 12742);
         System.out.println("Planet: " + earth.getName());
         // earth.name = "Mars"; ❌ This will give a compile error
+
+        //Create car
+        Car tesla = new Car("Tesla", 2021, true);
+        Car dodge = new Car("Dodge", 2019, false);
+        tesla.startEngine();
+        dodge.startEngine();
     }
 }
