@@ -35,7 +35,17 @@ public class LoopsAndArrayExercise {
         }
         //6. Stop at a certain value (while loop)
         int[] plusTwo = {1, 3, 5, 7, 9};
-        //int counter = 0;
+        int counterTwo = 0;
+        while (counterTwo < plusTwo.length){
+            if(plusTwo[counterTwo] == 7){
+                System.out.println("we hit seven");
+                break;
+            }
+            else{
+                System.out.println("Checking: " + plusTwo[counterTwo]);
+            }
+            counterTwo++;
+        }
 
 
 
