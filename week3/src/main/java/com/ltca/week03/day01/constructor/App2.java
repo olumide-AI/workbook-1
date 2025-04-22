@@ -37,5 +37,10 @@ public class App2 {
         Car dodge = new Car("Dodge", 2019, false);
         tesla.startEngine();
         dodge.startEngine();
+
+        //Create room and house
+        Room kitchen = new Room("kitchen");
+        House houseOne = new House(kitchen);
+        houseOne.describe();
     }
 }
