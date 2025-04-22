@@ -42,5 +42,12 @@ public class App2 {
         Room kitchen = new Room("kitchen");
         House houseOne = new House(kitchen);
         houseOne.describe();
+
+        //Area of a rectangle
+        Rectangle r1 = new Rectangle(4, 5);
+        Rectangle r2 = new Rectangle(10, 3);
+
+        System.out.println("Area 1: " + r1.getArea());
+        System.out.println("Area 2: " + r2.getArea());
     }
 }
