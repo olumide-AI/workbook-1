@@ -4,6 +4,10 @@
 - getters and setters 
 - Encapsulation 
 - Constructors, constructors overloading 
+- -boolean flag 
+- loops (while, do while, for)
+- Exception Handling(checked and unchecked); try with resources
+- File writing and Buffered reading 
 
 ## Bonus
 - constructors chaining 
@@ -20,4 +24,5 @@ and we set them privately and assigned getters and setters
 ## Question 
 - why do getters have return statement and setters not
 - so we dont use getter and setter in the class file
-- Does setting not just work for final 
+- Does setters not just work for final 
+- a constructor format
