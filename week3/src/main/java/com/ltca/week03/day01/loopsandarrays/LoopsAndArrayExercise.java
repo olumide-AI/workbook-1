@@ -1,7 +1,10 @@
 package com.ltca.week03.day01.loopsandarrays;
 
+import java.util.Scanner;
+
 public class LoopsAndArrayExercise {
     public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
         // 1. Print numbers with a for loop
         int[] numOneToFive = {1,2,3,4,5};
         for (int i = 0; i < numOneToFive.length; i++){
@@ -46,6 +49,10 @@ public class LoopsAndArrayExercise {
             }
             counterTwo++;
         }
+        //7. Ask until valid input (do-while)
+        System.out.println("Enter pass word");
+        String password = scanner.nextLine();
+        
 
 
 
