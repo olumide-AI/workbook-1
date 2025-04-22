@@ -52,7 +52,7 @@ public class LoopsAndArrayExercise {
         //7. Ask until valid input (do-while)
         System.out.println("Enter pass word");
         String password = scanner.nextLine();
-        
+
 
 
 
