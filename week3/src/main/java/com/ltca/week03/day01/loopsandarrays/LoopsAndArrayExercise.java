@@ -50,8 +50,14 @@ public class LoopsAndArrayExercise {
             counterTwo++;
         }
         //7. Ask until valid input (do-while)
-        System.out.println("Enter pass word");
-        String password = scanner.nextLine();
+        String password;
+        do{
+            System.out.println("Enter pass word");
+            password = scanner.nextLine();
+        }
+        while (!password.equals("secret123"));
+        System.out.println("password correct");
+
 
 
 
