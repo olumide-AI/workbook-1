@@ -7,13 +7,17 @@ public class CellPhoneApplication {
     public static void main(String[] args) {
         CellPhone iphone = cellPhoneOne( scanner);
         CellPhone samsung = cellPhoneTwo( scanner);
+        CellPhone phone3 = new CellPhone(1234, "Sony", "T-mobile", "307-76-0892", "Paul");
+
 
         display(iphone);
         display(samsung);
+        display(phone3);
 
         System.out.println("Call each other");
         iphone.dial(samsung.getPhoneNumber());
         samsung.dial(iphone.getPhoneNumber());
+        phone3.dial(iphone);
 
 
     }

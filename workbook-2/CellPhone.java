@@ -14,6 +14,15 @@ public class CellPhone {
         this.phoneNumber = "";
         this.owner = "";
     }
+
+    //Overloaded consructors
+    public CellPhone(int serialNumber, String model, String carrier, String phoneNumber, String owner ){
+        this.serialNumber = serialNumber;
+        this.model = model;
+        this.carrier = carrier;
+        this.phoneNumber = phoneNumber;
+        this.owner = owner;
+    }
     //Getters and setters
 
     public int getSerialNumber() {
@@ -60,7 +69,10 @@ public class CellPhone {
     //Method
     public void dial(String otherPhoneNumber){
         System.out.println(owner + "'s phone is calling " + otherPhoneNumber );
-
+    }
+    //Overloaded Methods
+    public void dial(CellPhone phone){
+        System.out.println(owner + "'s" + phone + " is calling " + phone.getPhoneNumber());
     }
 }
 
