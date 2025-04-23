@@ -54,5 +54,9 @@ public class CellPhoneService {
     public void setPhoneNumber(String phoneNumber) {
         this.phoneNumber = phoneNumber;
     }
+    //Methods
+    public static void dial(String owner, String otherPhoneNumber){
+        System.out.println(owner + "'s phone is calling " + otherPhoneNumber);
+    }
 }
 
