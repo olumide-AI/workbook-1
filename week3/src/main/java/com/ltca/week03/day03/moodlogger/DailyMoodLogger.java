@@ -1,5 +1,7 @@
 package com.ltca.week03.day03.moodlogger;
 
+import java.io.BufferedReader;
+import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.time.LocalDate;
@@ -32,8 +34,11 @@ public class DailyMoodLogger {
 
             if (userChoice == 1){
                 //log new mood method
+                String moodEntry = logUserMood(scanner);
+                writeUserMoodToFile(moodEntry);
             } else if (userChoice == 2) {
                 // Previous mood method
+                readUserLogFromFile();
             } else if (userChoice == 3) {
                 //Exit the loop
                 System.out.println("Goodbye");
@@ -67,18 +72,28 @@ public class DailyMoodLogger {
         DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
         String formattedEntryTime = entryTime.format(timeFormatter);
         //Console Output
-        return "On " + formattedEntryDate + "at " + formattedEntryTime + " you logged your feeling: " + userMood;
+        return "On " + formattedEntryDate + " at " + formattedEntryTime + " you logged you are feeling: " + userMood;
     }
     //Write mood to a file
     //My only concern will anytime i run it the file gets overwritten
     public static void writeUserMoodToFile(String moodEntry){
-        try(FileWriter fileWriter = new FileWriter("moodFile/dailyusermoodfile.txt")){
+        try(FileWriter fileWriter = new FileWriter("moodFile/dailyusermoodfile.txt", true)){
             fileWriter.write(moodEntry + "\n");
         }
         catch (IOException e){
             System.out.println("Oh no: " + e.getMessage());
         }
-
+    }
+    //Method to read will take a file has an input
+    public static void readUserLogFromFile(){
+        try(BufferedReader bufferedReader = new BufferedReader(new FileReader("moodFile/dailyusermoodfile.txt"))){
+            String line;
+            while ((line = bufferedReader.readLine()) !=null){
+                System.out.println(line);
+            }
+        } catch (IOException e) {
+            System.out.println("Problem: " + e.getMessage());
+        }
 
     }
 
