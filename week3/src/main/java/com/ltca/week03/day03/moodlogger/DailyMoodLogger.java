@@ -1,10 +1,20 @@
 package com.ltca.week03.day03.moodlogger;
 
+import java.io.FileWriter;
+import java.io.IOException;
+import java.time.LocalDate;
+import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class DailyMoodLogger {
     static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+        //To - Do
+        //Need a helper function to tie in user log method and writing and maybe saving
+
+
+
         //Use a loop to let the user choose between:
         //[1] Log a new mood
         //[2] View past moods
@@ -43,8 +53,33 @@ public class DailyMoodLogger {
     //  How do i write without overwriting the file content
 
     //Log mood method
-    public static void logUserMood(){
+    public static String logUserMood(Scanner scanner){
         //Ask user what is your mood
+        System.out.println("How're you feeling today? ");
+        String userMood = scanner.nextLine();
+        //Get the date and time of entry
+        LocalDate entryDate = LocalDate.now();
+        LocalTime entryTime = LocalTime.now();
+        //Format date to be used in string using string formatter
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+        String formattedEntryDate = entryDate.format(dateFormatter);
+        //Format time entry
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HH:mm");
+        String formattedEntryTime = entryTime.format(timeFormatter);
+        //Console Output
+        return "On " + formattedEntryDate + "at " + formattedEntryTime + " you logged your feeling: " + userMood;
+    }
+    //Write mood to a file
+    //My only concern will anytime i run it the file gets overwritten
+    public static void writeUserMoodToFile(String moodEntry){
+        try(FileWriter fileWriter = new FileWriter("moodFile/dailyusermoodfile.txt")){
+            fileWriter.write(moodEntry + "\n");
+        }
+        catch (IOException e){
+            System.out.println("Oh no: " + e.getMessage());
+        }
+
+
     }
 
 }
