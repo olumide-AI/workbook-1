@@ -8,6 +8,7 @@
 - loops (while, do while, for)
 - Exception Handling(checked and unchecked); try with resources
 - File writing and Buffered reading 
+- -Collections
 
 ## Bonus
 - constructors chaining 
@@ -26,3 +27,9 @@ and we set them privately and assigned getters and setters
 - so we dont use getter and setter in the class file
 - Does setters not just work for final 
 - a constructor format
+- The directory structure for file reading 
+
+## Notes on Collections
+- Situation when you need to hold multiple items, building elements
+- interface (contracts for class) contracts for specific behavior, behaviour characteristics of class
+- 
