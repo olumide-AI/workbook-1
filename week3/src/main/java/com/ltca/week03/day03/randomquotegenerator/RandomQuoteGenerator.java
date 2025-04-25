@@ -1,5 +1,8 @@
 package com.ltca.week03.day03.randomquotegenerator;
 
+import java.io.File;
+import java.io.FileWriter;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
@@ -51,5 +54,39 @@ public class RandomQuoteGenerator {
         Random random = new Random();
         int specificIndex = random.nextInt(quotes.size());
         return quotes.get(specificIndex);
+    }
+    public static void initializeQuoteFile(String directoryName, String fileName) {
+        // Step 1: Create the directory if it doesn't exist
+        File directory = new File(directoryName);
+        if (!directory.exists()) {
+            boolean dirCreated = directory.mkdirs(); // Create all parent directories if needed
+            if (dirCreated) {
+                System.out.println("Directory '" + directoryName + "' created.");
+            } else {
+                System.out.println("Failed to create directory.");
+                return; // Exit early if directory creation failed
+            }
+        }
+
+        // Step 2: Prepare the full file path
+        File quoteFile = new File(directoryName + File.separator + fileName);
+
+        try (FileWriter writer = new FileWriter(quoteFile, true)) {
+            // 'true' = append mode, so it doesn't erase the file each time
+
+            List<String> quotes = getRandomQuotes(); // Get your hardcoded list
+
+            // Step 3: Write each quote into the file if it's not already there
+            for (String quote : quotes) {
+                writer.write(quote + "\n"); // Add a newline after each quote
+            }
+
+            System.out.println("Quotes added to: " + quoteFile.getAbsolutePath());
+
+        } catch (IOException e) {
+            // Step 4: Handle any errors during file writing
+            System.out.println("An error occurred while writing to the file.");
+            e.printStackTrace();
+        }
     }
 }
