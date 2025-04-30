@@ -16,27 +16,17 @@ public class PalindromeProduct {
 
         //Find the sum of two 3 digits number
         // Ex. 111 * 222
-        int product = 0;
-        String currentLargestPalindrome = "";
-        String largestPalindrome = "";
-        for (int i = 1; i <= 999; i++){
-            for (int j =1; j <= 999; i++){
-                product = i*j;
-            }
-            String stringOfProduct = String.valueOf(product);
-            String copiedProduct = new String(stringOfProduct);
-            StringBuilder reversedProduct = new StringBuilder(copiedProduct);
-            reversedProduct.reverse().toString();
-            if (reversedProduct.equals(stringOfProduct)){
-                currentLargestPalindrome = stringOfProduct;
+        int largestPalindrome = 0;
+        for (int i = 100; i <= 999; i++){
+            for (int j =100; j <= 999; i++){
+                int product = i*j;
+                String stringOfProduct = String.valueOf(product);
+                String reversedProduct = new StringBuilder(stringOfProduct).reverse().toString();
+                if (reversedProduct.equals(stringOfProduct) && product > largestPalindrome){
+                    largestPalindrome = product;
             }
         }
-        if (Integer.parseInt(currentLargestPalindrome) > Integer.parseInt(largestPalindrome)){
-            largestPalindrome = currentLargestPalindrome;
         }
-        else {
-            largestPalindrome = largestPalindrome;
-        }
-        System.out.println(largestPalindrome);
+        System.out.println(largestPalindrome + "is the largest palindrome");
     }
 }
