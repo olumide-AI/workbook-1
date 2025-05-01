@@ -8,6 +8,7 @@ public class BedtimeStories {
 
     public static void main(String[] args) {
        Scanner scanner = new Scanner(System.in);
+        System.out.println("Please input file name: ");
        String userFile = scanner.nextLine();
         try{
             //Create new file stream
