@@ -13,6 +13,7 @@ public class FamousQuotes {
             try{
                 System.out.println("Select a number between 1 and 10: ");
                 int userInput = scanner.nextInt();
+                scanner.nextLine();
 
                 if (userInput >=1 && userInput <=10){
                     System.out.println("\n Your quote is");
