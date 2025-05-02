@@ -18,8 +18,14 @@ public class PayrollCalculator {
             String input;
             while ((input = bufferedReader.readLine()) != null){
                 //System.out.println(input +"\n");
+
                 //Split into individual files using | delimeter
                 String[] splitParts = input.split("\\|");
+
+                if (splitParts.length != 4){
+                    System.out.println("skip line: " + input);
+                    continue;
+                }
                 int id = Integer.parseInt(splitParts[0]);
                 String name = splitParts[1];
                 double hoursWorked = Double.parseDouble(splitParts[2]);
@@ -37,6 +43,9 @@ public class PayrollCalculator {
         }
         catch (IOException e){
             System.out.println("File reading error");
+        }
+        catch (NumberFormatException e){
+            System.out.println("Skipping line due to formatting error on line: ");
         }
 
     }
