@@ -1,12 +1,14 @@
 package main.java.exercises.mod2;
 
-import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
+import java.util.Scanner;
 
 public class PayrollCalculator {
+    static Scanner scanner = new Scanner(System.in);
     public static void main(String[] args) {
+        readFileFromCsv();
+    }
+    public static void readFileFromCsv(){
         //Load file using FileReader object
         try{
             //Create a bufferedreader
@@ -49,4 +51,5 @@ public class PayrollCalculator {
         }
 
     }
+
 }
