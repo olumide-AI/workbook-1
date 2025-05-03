@@ -44,4 +44,5 @@ public class Pet {
     public void setHasFur(boolean hasFur) {
         this.hasFur = hasFur;
     }
+    public boolean hasFur() { return hasFur; }
 }
