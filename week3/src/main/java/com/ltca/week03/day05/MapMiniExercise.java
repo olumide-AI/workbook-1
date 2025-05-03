@@ -10,8 +10,8 @@ public class MapMiniExercise {
         //stringToString();
         //stringToInteger();
         //stringToObject();
-        stringToListOfPet();
-        //objectToList();
+        //stringToListOfPet();
+        objectToList();
 
     }
 
@@ -182,5 +182,63 @@ public class MapMiniExercise {
         }
 
     }
+    public static void groupToPets() {
+        // --- STEP 1: Create two Person objects ---
+        Person alice = new Person(28, "Alice");
+        Person bob = new Person(30, "Bob");
+
+        // --- STEP 2: Add these persons to a List to represent the household ---
+        List<Person> roommates = new ArrayList<>();
+        roommates.add(alice);
+        roommates.add(bob);
+
+        // --- STEP 3: Create a list of pets shared by this household ---
+        List<Pet> sharedPets = new ArrayList<>();
+        sharedPets.add(new Pet("Whiskers", "Cat", 2, true));
+        sharedPets.add(new Pet("Fido", "Dog", 5, true));
+
+        // --- STEP 4: Create a HashMap that maps List<Person> to List<Pet> ---
+        Map<List<Person>, List<Pet>> householdToPets = new HashMap<>();
+
+        // --- STEP 5: Add the group of roommates and their pets to the map ---
+        householdToPets.put(roommates, sharedPets);
+
+        // --- STEP 6: Retrieve and print the names of all shared pets ---
+        System.out.println("Shared pets for the household:");
+        for (Pet pet : householdToPets.get(roommates)) {
+            System.out.println("- " + pet.getName());
+        }
+
+        // --- STEP 7: Loop over all entries in the map and print details ---
+        System.out.println("\nAll households and their shared pets:");
+
+        for (Map.Entry<List<Person>, List<Pet>> entry : householdToPets.entrySet()) {
+            List<Person> people = entry.getKey(); // the group of people in the household
+            List<Pet> pets = entry.getValue();    // the list of pets they share
+
+            // Print all names in the household
+            System.out.print("Household with: ");
+            for (int i = 0; i < people.size(); i++) {
+                Person person = people.get(i);
+                System.out.print(person.getName());
+                if (i < people.size() - 1) {
+                    System.out.print(", ");
+                }
+            }
+
+            // Print pet names
+            System.out.print(" share pets: ");
+            for (int i = 0; i < pets.size(); i++) {
+                Pet pet = pets.get(i);
+                System.out.print(pet.getName());
+                if (i < pets.size() - 1) {
+                    System.out.print(", ");
+                }
+            }
+
+            System.out.println(); // Move to the next line after one household
+        }
+    }
+
 
 }
