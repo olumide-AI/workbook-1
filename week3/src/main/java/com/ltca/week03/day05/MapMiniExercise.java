@@ -11,7 +11,8 @@ public class MapMiniExercise {
         //stringToInteger();
         //stringToObject();
         //stringToListOfPet();
-        objectToList();
+        //objectToList();
+        groupToPets();
 
     }
 
@@ -164,6 +165,9 @@ public class MapMiniExercise {
 
         //Add new to peter
         personToPet.get(peter).add(new Pet("cody", "sheep", 1, true));
+        //Will this replace what we have in peter already?
+        peterPets.add(new Pet("dante", "parrot", 2, false));
+        personToPet.put(peter,peterPets);
 
         //Looping
         System.out.println("\nAll people and their pets:");
