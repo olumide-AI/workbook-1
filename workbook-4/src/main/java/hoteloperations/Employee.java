@@ -85,4 +85,33 @@ public class Employee {
          hoursWorked = Math.abs(punchOutTime - punchInTime);
 
     }
+    //Regular pay
+    public double getRegularHours (){
+        if (hoursWorked <= 40){
+            return hoursWorked;
+        }
+        else {
+            return 40;
+        }
+    }
+
+    //Overtime hours
+    public double getOvertimeHours (){
+        if (hoursWorked >40 ){
+            return hoursWorked - 40;
+        }
+        else {
+            return 0;
+        }
+    }
+
+    //Total Pay
+    public double getTotalPay(){
+        double regularPay = payRate * getRegularHours();
+        double overtimePay = payRate *1.5 * getOvertimeHours();
+        return regularPay + overtimePay;
+    }
+
+
+
 }
