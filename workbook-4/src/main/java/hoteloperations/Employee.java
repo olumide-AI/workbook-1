@@ -1,11 +1,16 @@
 package hoteloperations;
 
+import java.time.LocalTime;
+
 public class Employee {
     private String employeeId;
     private String name;
     private String department;
     private double payRate;
     private double hoursWorked;
+
+    //Variables for clocking in
+    private double punchInTime;
 
     //Constructor
 
@@ -57,5 +62,14 @@ public class Employee {
 
     public void setHoursWorked(double hoursWorked) {
         this.hoursWorked = hoursWorked;
+    }
+    //Methods
+    public void punchIn(double time){
+         punchInTime = time;
+
+    }
+    public void punchOut(double time){
+        double timeWorked = Math.abs(time - punchInTime);
+        hoursWorked += timeWorked;
     }
 }

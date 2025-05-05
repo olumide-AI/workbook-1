@@ -61,4 +61,21 @@ public class Room {
     public void setAvailable(boolean available) {
         this.available = available;
     }
+    //Methods
+    //Mark Check in
+    public void checkIn(){
+       setOccupied(true);
+       setDirty(true);
+       setAvailable(false);
+    }
+    // Mark check out
+    public void checkOut(){
+       setOccupied(false);
+       cleanRoom();
+    }
+    //Mark clean Room
+    public void cleanRoom(){
+        setDirty(false);
+        setAvailable(true);
+    }
 }
