@@ -1,5 +1,6 @@
 package hoteloperations;
 
+import java.time.LocalDateTime;
 import java.time.LocalTime;
 
 public class Employee {
@@ -11,6 +12,7 @@ public class Employee {
 
     //Variables for clocking in
     private double punchInTime;
+    private double punchOutTime;
 
     //Constructor
 
@@ -71,5 +73,16 @@ public class Employee {
     public void punchOut(double time){
         double timeWorked = Math.abs(time - punchInTime);
         hoursWorked += timeWorked;
+    }
+
+    //Methods using local date time
+    public void punchIn(){
+         punchInTime = LocalDateTime.now().getHour();
+    }
+
+    public void punchOut(){
+         punchOutTime = LocalDateTime.now().getHour();
+         hoursWorked = Math.abs(punchOutTime - punchInTime);
+
     }
 }
