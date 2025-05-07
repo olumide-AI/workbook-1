@@ -7,12 +7,8 @@ public class Utils {
 
     public static void main(String[] args) {
 
-        var x = genPlayerList(2);
-        for (int i=0; i<x.size(); i++){
-            System.out.println(x.get(i));
-        }
     }
-    public static List<Player> genPlayerList (int noOfPlayers){
+    public static List<Player> genPlayerList (){
         //create an empty list
         List<Player> playerList = new ArrayList<>();
         //Create a string array for 11 players name in the array list

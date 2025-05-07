@@ -41,6 +41,11 @@ public class Team {
         this.playerList.add(individualPlayer);
 
     }
+    public static Team createRandomTeam(String name) {
+        List<Player> players = Utils.genPlayerList(); // or Team.genPlayerList()
+        return new Team(name, players);
+    }
+
 
     @Override
     public String toString() {
