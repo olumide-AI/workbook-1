@@ -54,8 +54,14 @@ public class Room {
         this.dirty = dirty;
     }
 
+    //Actually a method
     public boolean isAvailable() {
-        return available;
+        if(!isDirty() && !isOccupied()){
+            return available;
+        }
+        else {
+            return !available;
+        }
     }
 
     public void setAvailable(boolean available) {
