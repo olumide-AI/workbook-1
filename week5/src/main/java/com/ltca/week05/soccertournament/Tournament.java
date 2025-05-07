@@ -45,7 +45,7 @@ public class Tournament {
         winner = finalWinners.get(0);
 
         // Print the final result
-        System.out.println("🏆 The winner of the tournament is: " + winner.getName());
+        System.out.println(" The winner of the tournament is: " + winner.getName());
     }
 
     // This helper method pairs up teams into matches (2 per match)

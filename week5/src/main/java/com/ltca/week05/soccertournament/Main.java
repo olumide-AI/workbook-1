@@ -31,5 +31,5 @@ public class Main {
         // Step 4: Start the tournament!
         myTournament.startTournament();
     }
-    
+
 }

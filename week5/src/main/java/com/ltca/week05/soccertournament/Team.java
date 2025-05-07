@@ -33,7 +33,7 @@ public class Team {
 
     //Methods to add player
     /*
-        ?- Will it retutn the list of players or just add to the list ??
+        ?- Will it return the list of players or just add to the list ??
         Create a List of teams
         use .add to add players to the team
      */
