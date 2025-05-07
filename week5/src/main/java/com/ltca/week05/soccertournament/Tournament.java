@@ -11,7 +11,7 @@ public class Tournament {
 
     //constructor
 
-    public Tournament(String name, List<Team> teams, List<Round> rounds) {
+    public Tournament(String name, List<Team> teams) {
         this.name = name;
         this.teams = teams;
         this.rounds = new ArrayList<>();
@@ -61,5 +61,5 @@ public class Tournament {
 
         return matches;
     }
-    
+
 }
