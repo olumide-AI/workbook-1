@@ -4,20 +4,17 @@ public class Reservation {
     // Reservation class is responsible for storing information related to a guest
     //stay.
     private String roomType;
-    private double price;
     private int numberOfNights;
     private boolean weekend;
-    private double reservationTotal;
+
 
     //Create construtor
 
 
-    public Reservation(String roomType, double price, int numberOfNights, boolean weekend, double reservationTotal) {
+    public Reservation(String roomType, int numberOfNights, boolean weekend) {
         this.roomType = roomType.toLowerCase();
-        this.price = price;
         this.numberOfNights = numberOfNights;
         this.weekend = weekend;
-        this.reservationTotal = reservationTotal;
     }
 
     //Getters and setters
@@ -30,13 +27,6 @@ public class Reservation {
         this.roomType = roomType.toLowerCase();
     }
 
-    public double getPrice() {
-        return price;
-    }
-
-    public void setPrice(double price) {
-        this.price = price;
-    }
 
     public int getNumberOfNights() {
         return numberOfNights;
@@ -54,16 +44,20 @@ public class Reservation {
         this.weekend = weekend;
     }
 
-    public double getReservationTotal() {
-        return reservationTotal;
+
+    public double getPrice(){
+        double pricePerNight = 124;
+        if(roomType.equalsIgnoreCase("king")) {
+            pricePerNight = 139;
+        }
+        if(isWeekend()){
+            pricePerNight *= 1.1;
+        }
+        return pricePerNight;
     }
 
-    public void setReservationTotal(double reservationTotal) {
-        this.reservationTotal = reservationTotal;
+    public double getReservationTotal(){
+        return numberOfNights * getPrice();
     }
-
-    //Method to get price per night basess on room type and weekend
-    // Price per night based on room type and weekend
-    // Method to get price per night based on room type and weekend
 }
 
