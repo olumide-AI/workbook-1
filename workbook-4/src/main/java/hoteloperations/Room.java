@@ -7,14 +7,13 @@ public class Room {
     private double price;
     private boolean occupied;
     private boolean dirty;
-    private boolean available;
+
 
     //Create constructor
 
-    public Room(int numberOfBeds, boolean dirty, boolean available, boolean occupied, double price) {
+    public Room(int numberOfBeds, boolean dirty, boolean occupied, double price) {
         this.numberOfBeds = numberOfBeds;
         this.dirty = dirty;
-        this.available = available;
         this.occupied = occupied;
         this.price = price;
     }
@@ -56,23 +55,14 @@ public class Room {
 
     //Actually a method
     public boolean isAvailable() {
-        if(!isDirty() && !isOccupied()){
-            return available;
-        }
-        else {
-            return !available;
-        }
+        return !isOccupied() && !isDirty();
     }
 
-    public void setAvailable(boolean available) {
-        this.available = available;
-    }
     //Methods
     //Mark Check in
     public void checkIn(){
        setOccupied(true);
        setDirty(true);
-       setAvailable(false);
     }
     // Mark check out
     public void checkOut(){
@@ -82,6 +72,5 @@ public class Room {
     //Mark clean Room
     public void cleanRoom(){
         setDirty(false);
-        setAvailable(true);
     }
 }
