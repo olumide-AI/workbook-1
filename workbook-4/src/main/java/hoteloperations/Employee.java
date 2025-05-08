@@ -77,12 +77,17 @@ public class Employee {
 
     //Methods using local date time
     public void punchIn(){
-         punchInTime = LocalDateTime.now().getHour();
+        int hours = LocalDateTime.now().getHour();
+        int minutes = LocalDateTime.now().getMinute() * 1/60;
+        punchInTime = hours + minutes;
+
     }
 
     public void punchOut(){
-         punchOutTime = LocalDateTime.now().getHour();
-         hoursWorked = Math.abs(punchOutTime - punchInTime);
+        int hours = LocalDateTime.now().getHour();
+        double minutes = LocalDateTime.now().getMinute()/60.0;
+        double endTime = hours + minutes;
+        hoursWorked += endTime - punchInTime;
 
     }
     //Regular pay
