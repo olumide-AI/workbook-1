@@ -25,13 +25,48 @@ public class Hand {
 
     //The hand uses the methods of each card to determine the value of each card
     //and adds up all values
-    public int getValue(){
+    public int getValue() {
         int value = 0;
-        for (Card card: cardList){
-            card.flip(); //turn the card over to see the value
-            value = value + card.getPointValue();//Calculates the total value of the card in hand 
-            card.flip(); //hide the card again
+        int aceCount = 0;
+
+        for (Card card : cardList) {
+            if (card.isFaceUp()) {  // Only consider cards that are face up
+                if (card.getValue().equals("A")) {
+                    value += 11;
+                    aceCount++;
+                } else {
+                    value += card.getPointValue();
+                }
+            }
         }
+
+        // Adjust Aces from 11 to 1 as needed to avoid busting
+        while (value > 21 && aceCount > 0) {
+            value -= 10;  // Effectively turning an Ace from 11 to 1
+            aceCount--;
+        }
+
         return value;
+    }
+
+    public void showAllCards(){
+        for (Card card: cardList){
+            if(!card.isFaceUp()){ //if the card is face down flip it
+                card.flip();
+            }
+        }
+    }
+
+    public void hideAllCards(){
+        for (Card card: cardList){
+            if(card.isFaceUp()){ //if the card is face down flip it
+                card.flip();
+            }
+        }
+    }
+
+    //Clears out all cards after a round ends
+    public void clearHand (){
+       cardList.clear();
     }
 }
