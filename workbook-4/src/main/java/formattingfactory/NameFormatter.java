@@ -34,20 +34,68 @@ public class NameFormatter {
     public static String format(String fullName){
         //DR. Mel B Johnson, PHD
         //Firstly split by comma
+
         String[] nameSplit = fullName.split(",");
-        String prefixToLastname = nameSplit[0];
-        String suffix = nameSplit[1];
+        if (nameSplit.length < 2){
+            return "invalid format: missing suffix";
+        }
+        String prefixToLastname = nameSplit[0].trim();
+        String suffix = nameSplit[1].trim();
 
-        String[] prefixToLastnameSplit = prefixToLastname.split("//.");
-        String prefix = prefixToLastnameSplit[0];
-        String firstnameToLastname = prefixToLastnameSplit[1];
 
-        String[] splitBySpace = firstnameToLastname.split(" ");
-        String firstName = splitBySpace[0];
-        String middleName = splitBySpace[1];
-        String lastName = splitBySpace[2];
 
-        return prefix + ". " + firstName + " " + middleName + " " + lastName + ", " + suffix;
+        String[] prefixSplit = prefixToLastname.split("\\., 2");
+        String prefix;
+        String firstnameToLastname;
+
+        if (prefixSplit.length > 1){
+            prefix = prefixSplit[0].trim();
+            firstnameToLastname = prefixSplit[1].trim();
+        }
+        else {
+            prefix = "";
+            firstnameToLastname = prefixSplit[0].trim();
+        }
+
+        String[] nameParts = firstnameToLastname.split(" ");
+        String firstName = "";
+        String middleName = "";
+        String lastName = "";
+
+        if (nameParts.length >= 1){
+            firstName = nameParts[0].trim();
+        }
+        if (nameParts.length >=3){
+            middleName = nameParts[1].trim();
+            lastName = nameParts[2].trim();
+        } else if (nameParts.length ==2) {
+            lastName = nameParts[1].trim();
+        }
+
+        //Build string using string buildet
+        StringBuilder formattedName = new StringBuilder();
+
+        if (!prefix.isEmpty()){
+            formattedName.append(prefix).append(", ");
+        }
+        formattedName.append(firstName);
+
+        if (!middleName.isEmpty()){
+            formattedName.append(" ").append(middleName);
+        }
+
+        if (!lastName.isEmpty()){
+            formattedName.append(" ").append(lastName);
+        }
+        formattedName.append(", ").append(suffix);
+        return formattedName.toString();
+
+
+    }
+
+    public static void main(String[] args) {
+        String personName = "Mel B Johnson";
+        System.out.println(format(personName));
 
     }
 //    public static String format(String fullName) {
