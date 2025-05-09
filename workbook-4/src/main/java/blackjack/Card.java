@@ -57,5 +57,19 @@ public class Card {
             return 0;
         }
     }
+    public void flip(){
+        faceUp = !faceUp;
+    }
+
+    //To string
+    public String toString() {
+        if (isFaceUp()) {
+            return value + " of " + suit;
+        }
+        else {
+            return "# Hidden Card #";
+        }
+    }
+
 
 }
