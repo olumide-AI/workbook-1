@@ -42,20 +42,27 @@ public class Card {
     //Methods
     public int getPointValue(){
         //Only return the value if the card is face up
-        if (isFaceUp()){
-            if(value.equals("A")){
-                return 11;
-            }
-            else if (value.equals("K") || value.equals("J") || value.equals("Q") ) {
-                return 10;
+        try{
+            if (isFaceUp()){
+                if(value.equals("A")){
+                    return 11;
+                }
+                else if (value.equals("K") || value.equals("J") || value.equals("Q") ) {
+                    return 10;
+                }
+                else {
+                    return Integer.parseInt(value);
+                }
             }
             else {
-                return Integer.parseInt(value);
+                return 0;
             }
         }
-        else {
-            return 0;
+        catch (NumberFormatException e){
+            System.out.println("Must be a letter A,K,J,Q, or an integer between 2 to 9");
         }
+        return 0;
+
     }
     public void flip(){
         faceUp = !faceUp;
