@@ -66,13 +66,13 @@ public class Employee {
         this.hoursWorked = hoursWorked;
     }
     //Methods
-    public void punchIn(double time){
-         punchInTime = time;
+    public double punchIn(double time){
+        return punchInTime = time;
 
     }
-    public void punchOut(double time){
+    public double punchOut(double time){
         double timeWorked = Math.abs(time - punchInTime);
-        hoursWorked += timeWorked;
+       return hoursWorked += timeWorked;
     }
 
     //Methods using local date time
