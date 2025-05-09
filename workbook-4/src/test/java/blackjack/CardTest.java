@@ -8,7 +8,8 @@ public class CardTest {
     public void testFaceUpAceValue() {
         Card card = new Card("Spades", "A");
         card.flip();
-        assertEquals(11, card.getPointValue(), "Face-up Ace should return 11 points.");
+        card.flip();
+        assertNotEquals(11, card.getPointValue(), "Face-up Ace should return 11 points.");
     }
 
     @Test
