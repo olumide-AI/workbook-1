@@ -69,4 +69,9 @@ public class Hand {
     public void clearHand (){
        cardList.clear();
     }
+
+    public int getSize() {
+        return cardList.size();
+    }
+
 }
