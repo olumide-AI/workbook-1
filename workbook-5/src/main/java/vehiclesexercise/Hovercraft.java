@@ -1,4 +1,7 @@
 package vehiclesexercise;
 
-public class Hovercraft {
+public class Hovercraft extends Vehicle{
+    public void goAquaMode(){
+
+    }
 }

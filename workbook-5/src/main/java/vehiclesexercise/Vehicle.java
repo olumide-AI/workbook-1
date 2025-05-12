@@ -1,6 +1,16 @@
 package vehiclesexercise;
 
 public class Vehicle {
+    //Made up
+    private String name;
+    private String engineType;
+    private int numberOfWheels;
+    private int vinNumber;
+    private int yearMade;
+    private String makeAndModel;
+    private License license;
+
+    //Compulsory
     private String color;
     private int numberOfPassengers;
     private int cargoCapacity;

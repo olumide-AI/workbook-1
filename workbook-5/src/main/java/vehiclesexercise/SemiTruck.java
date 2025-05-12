@@ -1,4 +1,7 @@
 package vehiclesexercise;
 
-public class SemiTruck {
+public class SemiTruck extends Vehicle {
+    private int numberOfTrailers;
+    private boolean hasSleeper;
+
 }
