@@ -1,4 +1,4 @@
 package vehiclesexercise;
 
-public class Moped {
+public class Moped extends Vehicle{
 }
