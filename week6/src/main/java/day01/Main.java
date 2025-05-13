@@ -32,7 +32,14 @@ public class Main {
         discountedProduct.setPrice(20.00);
         System.out.println(discountedProduct.applyDiscount(10));
 
-      
+        Grade grade = new Grade(79);
+        Student student = new Student(grade);
+        System.out.println(student.getGrade().pass());
+
+        Circle circle = new Circle();
+        circle.draw();
+        Square square = new Square();
+        square.draw();
 
 
 
