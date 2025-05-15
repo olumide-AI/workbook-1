@@ -3,8 +3,8 @@ package day03.shoppingcartsystem;
 //Base Case
 public class Product {
     //Properties
-    String name;
-    double price;
+    private String name;
+    private double price;
 
     //Constructor
     public Product(String name, double price) {
@@ -31,5 +31,13 @@ public class Product {
 
     public void setPrice(double price) {
         this.price = price;
+    }
+
+    @Override
+    public String toString() {
+        return "Product{" +
+                "name='" + name + '\'' +
+                ", price=" + price +
+                '}';
     }
 }
