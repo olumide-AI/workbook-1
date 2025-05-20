@@ -18,7 +18,7 @@ public class Main  {
 
         Collections.sort(myFamily);
 
-        System.out.println("**** Afer Sorting ******");
+        System.out.println("**** After Sorting ******");
         System.out.println(myFamily);
     }
 }

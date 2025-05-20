@@ -40,12 +40,18 @@ public class BankAccount implements Valuable{
         return balance;
     }
     //Adds a balance
-    public void deposit(double amount){
+    public double deposit(double amount){
         balance += amount;
+        return balance;
     }
 
-    public double withdraw(){
-        return 0;
+    public double withdraw(double amount){
+        balance -= amount;
+        return balance;
+    }
+    @Override
+    public String toString() {
+        return "Bank Account #" + accountNumber + " (" + owner + ") $" + balance;
     }
 
 }
