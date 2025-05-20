@@ -22,7 +22,7 @@ public class FinanceApplication {
                 case 1:
                     System.out.println("Account Number");
                     String accountNumber = scanner.nextLine();
-                    System.out.println("Account Number");
+                    System.out.println("Account Owner");
                     String owner = scanner.nextLine();
                     System.out.println("Account Balance");
                     double balance = Double.parseDouble(scanner.nextLine());
@@ -66,7 +66,7 @@ public class FinanceApplication {
                     int yearBuilt = Integer.parseInt(scanner.nextLine());
                     System.out.println("Square Feet");
                     int sqFt = Integer.parseInt((scanner.nextLine()));
-                    System.out.println("Square Feet");
+                    System.out.println("Number of bedrooms");
                     int noOfBedrooms = Integer.parseInt((scanner.nextLine()));
                     portfolio.addValuable(new House(houseName, houseValue, yearBuilt, sqFt,noOfBedrooms));
                     break;
