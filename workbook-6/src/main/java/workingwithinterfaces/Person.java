@@ -1,6 +1,6 @@
 package workingwithinterfaces;
 
-public class Person {
+public class Person implements Comparable<Person> {
     private String firstName;
     private String lastName;
     private int age;
@@ -33,5 +33,19 @@ public class Person {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    @Override
+    public String toString() {
+        return "\n" + "first name: " + firstName + "\n" + "last name: " + lastName + "\n" + "Age: " + age;
+    }
+
+    public int compareTo(Person person){
+        if(this.getLastName().equalsIgnoreCase(person.getLastName()) && (this.getFirstName().equalsIgnoreCase(person.getFirstName()))){
+            return Integer.compare(this.getAge(), person.getAge());
+        } else if (this.getLastName().equalsIgnoreCase(person.getLastName())) {
+            return this.getFirstName().compareTo(person.getFirstName());
+        }
+        return this.getLastName().compareTo(person.getLastName());
     }
 }
