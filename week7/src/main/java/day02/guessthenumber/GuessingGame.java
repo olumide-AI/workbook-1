@@ -10,6 +10,14 @@ public class GuessingGame implements PlayableGame{
     private int targetNum;
     private Scanner scanner;
     private List<Integer> playerGuess;
+    private int maxRange;
+
+    public GuessingGame(int maxRange) {
+        this.maxRange = maxRange;
+        this.playerGuess = new ArrayList<>();
+        this.scanner = new Scanner(System.in);
+        this.targetNum = (int) (Math.random() *100);
+    }
 
     public GuessingGame(){
         this.playerGuess = new ArrayList<>();
@@ -38,5 +46,18 @@ public class GuessingGame implements PlayableGame{
             }
 
         }
+
     }
+
+    public void playGame(){
+        boolean keepPlaying = true;
+        while (keepPlaying){
+            startGame();
+            System.out.println("Do you want to play again? (Yes/No): ");
+            keepPlaying = scanner.nextLine().trim().equalsIgnoreCase("yes");
+        }
+        System.out.println("Thanks for playing!");
+    }
+
+
 }
