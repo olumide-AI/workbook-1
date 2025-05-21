@@ -19,13 +19,13 @@ public class SmartHome {
         });
 
         // Simulate automation
-        System.out.println("🏠 Evening mode activated...");
+        System.out.println(" Evening mode activated...");
         livingRoom.turnOn();
         thermostat.setTemperature(21);
         speaker.play("Chill playlist");
 
         // Simulate event
-        System.out.println("\n🕵️ Motion Event:");
+        System.out.println("\n Motion Event:");
         livingRoom.triggerMotionEvent();
     }
 }
