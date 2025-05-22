@@ -9,8 +9,10 @@ public class IntermediateOperationsExample {
         List<String> stringList = Arrays.asList("a", "ba", "car", "dada", "kolawole", "potter", "afolabi", "nichelle", "olumide");
         List<String> newList = stringList.stream()
                 //filter out strings with less than 6 char
+                //For each n, return true if it's long enough."
                 .filter((n) -> n.length() >=6)
                 //convert to uppercase
+                //.map(n -> n.toUpperCase())
                 .map(String::toUpperCase)
                 //What does it mean lamda can be replaced with method refernce
                 .toList();
