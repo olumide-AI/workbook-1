@@ -20,3 +20,24 @@
     - SELECT OrderID, CustomerID FROM northwind.Orders
       WHERE OrderID IN (SELECT OrderID FROM northwind.`Order Details`
       WHERE Quantity > (SELECT AVG(Quantity) FROM northwind.`Order Details`));
+
+## Level 2: Two Nested Queries
+
+- Find the product names of all products that were ordered in the order with the highest total quantity.
+    - SELECT ProductName FROM northwind.Products
+      WHERE ProductID IN (
+      SELECT ProductID from `Order Details`
+      WHERE OrderID = (
+      SELECT OrderID FROM northwind.`Order Details`
+      GROUP BY OrderID
+      ORDER BY SUM(Quantity) DESC
+      LIMIT 1
+      )
+      );
+- List all customers who have only placed one order.
+💡 Hint
+- Find the average unit price of products ordered by customers from London.
+💡 Hint
+- Find names of customers who have ordered a product with less than 10 units in stock.
+💡 Hint
+- Find categories where at least one product was ordered in quantity over 50.
