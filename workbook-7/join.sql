@@ -35,3 +35,9 @@ ON Orders.ShipVia = Shippers.ShipperID
 WHERE Orders.ShipCountry = 'Germany';
 
 -- List the order id, order date, ship name, ship address of all orders that ordered "Sasquatch Ale"?
+SELECT Orders.OrderID, OrderDate, ShipAddress, ShipName FROM northwind.`Order Details`
+JOIN Products
+ON `Order Details`.ProductID = Products.ProductID
+JOIN Orders
+ON `Order Details`.OrderID = Orders.OrderID
+WHERE ProductName = 'Sasquatch Ale';
