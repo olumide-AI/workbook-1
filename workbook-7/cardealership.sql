@@ -85,4 +85,20 @@ INSERT INTO inventory (dealership_id, vin) VALUES
   (2, '3GNEK18R5XG123789'),
   (3, '5NPE24AF2FH123654');
 
+-- 7.4) Sales Contracts
+--     (Vehicle with vin='3GNEK18R5XG123789' has already been sold)
+INSERT INTO sales_contracts (vin, dealership_id, sale_date, sale_price) VALUES
+  ('3GNEK18R5XG123789', 2, '2025-04-15', 13950.00),
+  ('1HGCM82633A004352', 1, '2025-05-01', 18000.00);
 
+
+-- 7.5) Update “sold” flag on sold vehicles
+UPDATE vehicles
+SET sold = TRUE
+WHERE vin IN ('3GNEK18R5XG123789', '1HGCM82633A004352');
+
+
+-- 7.6) Lease Contracts (optional sample)
+INSERT INTO lease_contracts (vin, lease_start_date, lease_end_date, monthly_payment) VALUES
+  ('1FAFP4041WF192837', '2025-06-01', '2026-05-31',  399.00),
+  ('2T1BURHE6FC123456', '2025-05-15', '2026-05-14',  299.00);
