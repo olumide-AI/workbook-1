@@ -72,6 +72,31 @@ public class NorthwindTraderMenu {
         }
     }
     public static void displayCustomers(Connection connection){
+        String sql = "SELECT ContactName, CompanyName, City, Country, Phone\n" +
+                " FROM northwind.Customers\n" +
+                " ORDER BY Country";
+        try(
+                PreparedStatement preparedStatement = connection.prepareStatement(sql);
+                ResultSet resultSet = preparedStatement.executeQuery();
+                ){
+            //Header
+            System.out.printf("\n%-25s %-30s %-15s %-15s %-15s%n",
+                    "Contact Name", "Company Name", "City", "Country", "Phone");
+            System.out.println("------------------------------------------------------------------------------------------");
 
+            //Display Rows
+            while (resultSet.next()){
+                System.out.printf("%-25s %-30s %-15s %-15s %-15s%n",
+                        resultSet.getString("ContactName"),
+                        resultSet.getString("CompanyName"),
+                        resultSet.getString("City"),
+                        resultSet.getString("Country"),
+                        resultSet.getString("Phone"));
+            }
+
+        }
+        catch (SQLException e){
+            System.out.println("Database error" + e.getMessage());
+        }
     }
 }
