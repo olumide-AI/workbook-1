@@ -1,9 +1,8 @@
-package jdbctest;
-
+package mod3exercise;
 import java.sql.*;
 import java.util.Scanner;
 
-public class jdbctest {
+public class App {
     public static void main(String[] args) throws SQLException {
         String userProduct = getUserInput();
 
