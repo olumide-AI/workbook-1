@@ -1,5 +1,8 @@
 package northwindtraders;
 
+import utils.DataBaseConfig;
+
+import javax.sql.DataSource;
 import java.sql.*;
 import java.util.Scanner;
 
@@ -11,14 +14,15 @@ public class NorthwindTraderMenu {
         }
         String username = args[0];
         String password = args[1];
+        DataSource dataSource = DataBaseConfig.getDataSource(username,password);
         String url = "jdbc:mysql://localhost:3306/northwind";
         boolean running = true;
 
         try (
-                Connection connection = DriverManager.getConnection(url, username, password);
+                Connection connection = dataSource.getConnection();
                 Scanner scanner = new Scanner(System.in)
         ) {
-            while (running) {
+            while (true) {
                 System.out.println("\nWhat do you want to do?");
                 System.out.println("1) Display all products");
                 System.out.println("2) Display all customers");
