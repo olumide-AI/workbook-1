@@ -6,6 +6,7 @@ import model.Film;
 import util.SakilaDataSource;
 
 import javax.sql.DataSource;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Scanner;
 
@@ -37,7 +38,18 @@ public class App {
             int actorId = Integer.parseInt(scanner.nextLine());
 
             List<Film> filmList = dataManager.getFilmsByActorId(actorId);
-            if(filmList)
+            if(filmList.isEmpty()){
+                System.out.println("No films found for this actor");
+            }
+            else{
+                System.out.println("Films");
+                for(Film film: filmList){
+                    System.out.println(film);
+                }
+            }
+        }
+        catch (SQLException e){
+            System.out.println("Database Error: " + e.getMessage());
         }
     }
 }
