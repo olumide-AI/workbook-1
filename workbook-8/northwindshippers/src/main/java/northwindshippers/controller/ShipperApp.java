@@ -1,4 +1,4 @@
-package northwindshippers.app;
+package northwindshippers.controller;
 
 import northwindshippers.dao.ShipperDao;
 import northwindshippers.model.Shipper;
