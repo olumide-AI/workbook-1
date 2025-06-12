@@ -14,6 +14,7 @@
         <module>northwindtraders</module>
         <module>sakilamovies</module>
         <module>sakilamoviesv2</module>
+        <module>northwindshippers</module>
     </modules>
 
     <properties>
