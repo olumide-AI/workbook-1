@@ -1,8 +1,13 @@
 package sakilaapp;
 
 import logic.DataManager;
+import model.Actor;
+import model.Film;
+import util.SakilaDataSource;
 
 import javax.sql.DataSource;
+import java.util.List;
+import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
@@ -12,6 +17,27 @@ public class App {
         }
         String username = args[0];
         String password = args[1];
-        DataSource dataSource = DataManager.get
+        DataSource dataSource = SakilaDataSource.getDataSource(username, password);
+        DataManager dataManager = new DataManager(dataSource);
+
+        try(Scanner scanner = new Scanner(System.in)){
+            System.out.println("Enter the last name of an actor: ");
+            String lastName = scanner.nextLine();
+
+            List<Actor> actorList = dataManager.searchActorByLastName(lastName);
+            if(actorList.isEmpty()){
+                System.out.println("No actors founds");
+                return;
+            }
+            System.out.println("Matching Actors: ");
+            for(Actor actor: actorList){
+                System.out.println(actor);
+            }
+            System.out.println("Enter the actor ID to view their films: ");
+            int actorId = Integer.parseInt(scanner.nextLine());
+
+            List<Film> filmList = dataManager.getFilmsByActorId(actorId);
+            if(filmList)
+        }
     }
 }
