@@ -71,4 +71,24 @@ public class ShipperDao {
 
     }
 
+    public boolean updatePhoneById(int shipperId, String newPhone){
+        String updatePhoneQuery = "UPDATE shippers SET Phone = ? WHERE ShipperID = ?";
+
+        try(Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(updatePhoneQuery)){
+            //Bind vales to the query placeholders
+            statement.setString(1, newPhone);
+            statement.setInt(2, shipperId);
+
+            //Execute the update
+            int rowsAffected = statement.executeUpdate();
+
+            return rowsAffected ==1;
+        }
+        catch (SQLException e){
+            System.out.println("Failed to update phone: " + e.getMessage());
+            return false;
+        }
+    }
+
 }
