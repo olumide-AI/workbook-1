@@ -4,6 +4,8 @@ import northwindshippers.model.Shipper;
 
 import javax.sql.DataSource;
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 //Handles interaction with the shipper database
 public class ShipperDao {
@@ -36,4 +38,37 @@ public class ShipperDao {
         }
         return -1;
     }
+
+    public List<Shipper> displayAllShippers() throws SQLException {
+        //Create empty list to store result
+        List<Shipper> shipperList = new ArrayList<>();
+
+        //SQL Query
+        String selectAllQuery = "SELECT ShipperID, CompanyName, Phone FROM shippers";
+
+        //Try with resources, helps you close resources
+        try(Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(selectAllQuery);
+        ResultSet resultSet = statement.executeQuery()) {
+            //Loop through each row in a result set
+            while (resultSet.next()){
+                //extract values from current row using the column names
+                int shipperId = resultSet.getInt("ShipperID");
+                String companyName = resultSet.getString("CompanyName");
+                String phoneNumber = resultSet.getString("Phone");
+
+                //Create a Shipper Object using the database row info
+                Shipper shipper = new Shipper(shipperId, companyName, phoneNumber);
+                shipperList.add(shipper);
+            }
+
+        }
+        catch (SQLException e){
+            System.out.println("Failed to fetch shippers from database: " + e.getMessage());
+        }
+
+        return shipperList;
+
+    }
+
 }
