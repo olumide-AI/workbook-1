@@ -91,4 +91,19 @@ public class ShipperDao {
         }
     }
 
+    public boolean deleteShipperById(int shipperId){
+        String deleteShipperQuery = "DELETE FROM shippers WHERE ShipperID = ?";
+
+        try(Connection connection = dataSource.getConnection();
+        PreparedStatement statement = connection.prepareStatement(deleteShipperQuery)){
+            statement.setInt(1, shipperId);
+            int rowsAffected = statement.executeUpdate();
+            return rowsAffected ==1;
+
+        } catch (SQLException e) {
+            System.out.println("Failed to delete shipper: " + e.getMessage());
+            return false;
+        }
+    }
+
 }
