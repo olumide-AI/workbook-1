@@ -15,6 +15,7 @@
         <module>sakilamovies</module>
         <module>sakilamoviesv2</module>
         <module>northwindshippers</module>
+        <module>northwindshipperlogger</module>
     </modules>
 
     <properties>
