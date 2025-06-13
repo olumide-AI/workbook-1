@@ -32,11 +32,12 @@ public class ShipperApp {
         try{
             int newId = createShipper();
             displayShippers();
+            System.out.println("New ShipperId: " + newId);
 
             updateShipperPhoneById();
             displayShippers();
 
-            deleteShipperById(newId);
+            deleteShipperById();
             displayShippers();
 
         }
@@ -69,14 +70,31 @@ public class ShipperApp {
         System.out.println("Phone number has been updated.");
     }
 
-    private void deleteShipperById(int shipperId) throws SQLException {
+    private void deleteShipperById() throws SQLException {
+        System.out.println("Enter the ID of the shipper to delete: ");
+        String userInput = scanner.nextLine();
+
+        //Validate the input is a number
+        int shipperId;
+        try{
+            shipperId = Integer.parseInt(userInput);
+        }
+        catch (NumberFormatException e){
+            System.out.println("Invalid input, please enter a number.");
+            return;
+        }
         if (shipperId <= 3){
             System.out.println("These ID's are referenced on another table and can't be deleted");
+            return;
         }
-        else{
-            shipperDao.deleteShipperById(shipperId);
-            System.out.println("Shipper has been deleted");
+        boolean shipperDeleted = shipperDao.deleteShipperById(shipperId);
+        if(shipperDeleted){
+            System.out.println("Shipper has been successfully deleted.");
         }
+        else {
+            System.out.println("No shipper found with this ID: " + shipperId + " no deletion occurred");
+        }
+
     }
 
     private void displayShippers() throws SQLException {
